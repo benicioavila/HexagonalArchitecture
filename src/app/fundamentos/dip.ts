@@ -4,6 +4,7 @@ import Fusca from "@/core/fundamentos/Fusca";
 import Carro from "@/core/fundamentos/Carro";
 import Ferrari from "@/core/fundamentos/Ferrari";
 import Civic from "@/core/fundamentos/Civic";
+import { terminal } from "terminal-kit";
 
 export default async function dip(){
     TerminalUtil.titulo('DIP')
@@ -16,14 +17,14 @@ export default async function dip(){
             carro = new Fusca()
             break
         case 1:
-                carro = new Civic()
+                carro = new Civic()                
                 break
         default:
             carro = new Ferrari
 
     }
     
-    corrida(carro)
+    corrida(carro, terminal.green)
 
     await TerminalUtil.esperarEnter()
 }
